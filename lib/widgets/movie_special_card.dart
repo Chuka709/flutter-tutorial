@@ -1,8 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movie/model/movie/index.dart';
 
 // import '../screens/movie_detail.dart';
+import '../screens/movie_detail.dart';
 import 'my_Bottomsheet.dart';
 
 class MovieSpecialCard extends StatelessWidget {
@@ -10,8 +10,8 @@ class MovieSpecialCard extends StatelessWidget {
   const MovieSpecialCard(this.data, {super.key});
 
   void _onCardTap(BuildContext context) {
-    //Navigator.push(context, MaterialPageRoute(builder: (_) => MovieDetailPage(data)));
-    showModalBottomSheet(context: context, isScrollControlled: true, builder: ((context) => MyBottomSheet(data)));
+    Navigator.push(context, MaterialPageRoute(builder: (_) => MovieDetailPage(data.id)));
+    // showModalBottomSheet(context: context, isScrollControlled: true, builder: ((context) => MyBottomSheet(data)));
   }
 
   @override

@@ -3,13 +3,15 @@ import 'package:movie/model/movie/index.dart';
 // import 'package:movie/screens/movie_detail.dart';
 import 'package:movie/widgets/my_dialog.dart';
 
+import '../screens/movie_detail.dart';
+
 class MovieCard extends StatelessWidget {
   final MovieModel data;
   const MovieCard(this.data, {super.key});
 
   void _onCardTap(BuildContext context) {
-    // Navigator.push(context, MaterialPageRoute(builder: (_) => MovieDetailPage(data)));
-    showDialog(context: context, useSafeArea: false, builder: ((context) => MyDialog(data)));
+    Navigator.push(context, MaterialPageRoute(builder: (_) => MovieDetailPage(data.id)));
+    // showDialog(context: context, useSafeArea: false, builder: ((context) => MyDialog(data)));
   }
 
   @override
